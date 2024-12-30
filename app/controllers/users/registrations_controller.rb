@@ -4,7 +4,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   respond_to :json
 
   # Ensure user is authenticated for updating and deleting their account
-  before_action :authenticate_user!, only: [:update, :destroy]
+  before_action :authenticate_user!, only: [ :update, :destroy ]
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   private
@@ -56,7 +56,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # Permit additional parameters for user registration and updates
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :bio, :city, :country, :email, :password, :password_confirmation])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :bio, :city, :country, :email, :password, :password_confirmation])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [ :first_name, :last_name, :bio, :city, :country, :email, :password, :password_confirmation ])
+    devise_parameter_sanitizer.permit(:account_update, keys: [ :first_name, :last_name, :bio, :city, :country, :email, :password, :password_confirmation ])
   end
 end

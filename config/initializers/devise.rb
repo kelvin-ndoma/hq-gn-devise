@@ -4,13 +4,13 @@ Devise.setup do |config|
   # Configure the mailer sender address
   # config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
   # config/initializers/devise.rb
-  config.mailer = 'CustomDeviseMailer'
-  config.mailer_sender = 'your-email@example.com'  # Set this to your email address
+  config.mailer = "CustomDeviseMailer"
+  config.mailer_sender = "your-email@example.com"  # Set this to your email address
 
 
 
   # Configure ORM (active_record for database-based authentication)
-  require 'devise/orm/active_record'
+  require "devise/orm/active_record"
 
   # Configure the JWT authentication settings
   config.jwt do |jwt|
@@ -19,12 +19,12 @@ Devise.setup do |config|
 
     # Specify the routes that will trigger JWT token issuance (dispatch)
     jwt.dispatch_requests = [
-      ['POST', %r{^/login$}]  # Token issued on login
+      [ "POST", %r{^/login$} ]  # Token issued on login
     ]
 
     # Specify routes that will revoke (invalidate) the JWT token
     jwt.revocation_requests = [
-      ['DELETE', %r{^/logout$}]  # Token revoked on logout
+      [ "DELETE", %r{^/logout$} ]  # Token revoked on logout
     ]
 
     # Set expiration time for the JWT token
@@ -34,13 +34,13 @@ Devise.setup do |config|
   # Other Devise configurations
 
   # Authentication keys, here it's assuming :email for authentication
-  config.authentication_keys = [:email]
+  config.authentication_keys = [ :email ]
 
   # Ensure the JWT token is stored in headers on API requests
-  config.skip_session_storage = [:http_auth]
+  config.skip_session_storage = [ :http_auth ]
 
   # Configure which authentication keys should be case-insensitive
-  config.case_insensitive_keys = [:email]
+  config.case_insensitive_keys = [ :email ]
 
   # Configure password length, making it more secure by default
   config.password_length = 6..128

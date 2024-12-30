@@ -57,3 +57,7 @@ http://localhost:3000/users/passwords/reset
  "test@test.com",
  "test1@test.com",
  "john.doe@example.com"]
+
+ /users for user profile update
+ rubocop -for solving cli error
+ 
