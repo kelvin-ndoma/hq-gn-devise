@@ -72,6 +72,8 @@ GEM
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
       uri (>= 0.13.1)
+    addressable (2.8.7)
+      public_suffix (>= 2.0.2, < 7.0)
     ast (2.4.2)
     base64 (0.2.0)
     bcrypt (3.1.20)
@@ -85,6 +87,8 @@ GEM
     brakeman (6.2.2)
       racc
     builder (3.3.0)
+    childprocess (5.1.0)
+      logger (~> 1.5)
     concurrent-ruby (1.3.4)
     connection_pool (2.4.1)
     crass (1.0.6)
@@ -145,6 +149,16 @@ GEM
       thor (~> 1.3)
       zeitwerk (>= 2.6.18, < 3.0)
     language_server-protocol (3.17.0.3)
+    launchy (3.0.1)
+      addressable (~> 2.8)
+      childprocess (~> 5.0)
+    letter_opener (1.10.0)
+      launchy (>= 2.2, < 4)
+    letter_opener_web (3.0.0)
+      actionmailer (>= 6.1)
+      letter_opener (~> 1.9)
+      railties (>= 6.1)
+      rexml
     logger (1.6.4)
     loofah (2.23.1)
       crass (~> 1.0.2)
@@ -199,6 +213,7 @@ GEM
     psych (5.2.2)
       date
       stringio
+    public_suffix (6.0.1)
     puma (6.5.0)
       nio4r (~> 2.0)
     raabro (1.4.0)
@@ -251,6 +266,7 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
+    rexml (3.4.0)
     rubocop (1.69.2)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -358,6 +374,8 @@ DEPENDENCIES
   devise-jwt
   jsonapi-serializer
   kamal
+  letter_opener
+  letter_opener_web
   pg
   puma (>= 5.0)
   rack-cors

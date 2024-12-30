@@ -1,19 +1,24 @@
 class Users::SessionsController < Devise::SessionsController
+  include RackSessionFix
+
   respond_to :json
+
   private
 
+  # Respond with user data on successful login
   def respond_with(resource, _opts = {})
     render json: {
-      status: {code: 200, message: 'Logged in sucessfully.'},
-      data: UserSerializer.new(resource).serializable_hash[:data][:attributes]
+      status: { code: 200, message: 'Logged in successfully.' },
+      user: UserSerializer.new(resource).serializable_hash[:data][:attributes]
     }, status: :ok
   end
 
+  # Respond with message on logout
   def respond_to_on_destroy
     if current_user
       render json: {
         status: 200,
-        message: "logged out successfully"
+        message: "Logged out successfully"
       }, status: :ok
     else
       render json: {
@@ -22,5 +27,6 @@ class Users::SessionsController < Devise::SessionsController
       }, status: :unauthorized
     end
   end
+
   
 end
