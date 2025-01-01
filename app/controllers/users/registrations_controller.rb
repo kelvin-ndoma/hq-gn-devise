@@ -53,7 +53,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
       }, status: :unprocessable_entity
     end
   end
-
   # Permit additional parameters for user registration and updates
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [ :first_name, :last_name, :bio, :city, :country, :email, :password, :password_confirmation ])
