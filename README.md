@@ -22,7 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-rails g devise:controllers users -c sessions registrations
+<!-- rails g devise:controllers users -c sessions registrations
 
 Summary of Routes from Signup to Logout:
 
@@ -61,3 +61,12 @@ http://localhost:3000/users/passwords/reset
  /users for user profile update
  rubocop -for solving cli error
  
+
+ admin routes
+
+ Create the admin user using the rails console throught the update method!
+ the Get all users using 
+ URL: GET /admin/users and CREATE /admin/users - then assign the role
+ DELETE
+ URL: DELETE /admin/users/:id
+ URL: PATCH http://localhost:3000/admin/users/:id (Replace :id with the ID of the user you want to update) -->

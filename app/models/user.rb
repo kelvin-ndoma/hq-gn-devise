@@ -33,4 +33,8 @@ class User < ApplicationRecord
   def normalize_email
     self.email = email.strip.downcase if email.present?
   end
+
+  def admin?
+    admin
+  end
 end
