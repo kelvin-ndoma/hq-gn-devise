@@ -32,9 +32,9 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
-  # admin routes 
+  # admin routes
   namespace :admin do
-    resources :users, only: [:index, :create, :destroy, :update]  # Admin can list, create, and delete users
+    resources :users, only: [ :index, :create, :destroy, :update ]  # Admin can list, create, and delete users
   end
 
   # Health check route
