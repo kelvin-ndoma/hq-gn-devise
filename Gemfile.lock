@@ -84,7 +84,7 @@ GEM
     bigdecimal (3.1.9)
     bootsnap (1.18.4)
       msgpack (~> 1.2)
-    brakeman (6.2.2)
+    brakeman (7.0.0)
       racc
     builder (3.3.0)
     childprocess (5.1.0)
@@ -368,7 +368,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  brakeman
+  brakeman (~> 7.0.0)
   debug
   devise
   devise-jwt
@@ -380,7 +380,7 @@ DEPENDENCIES
   puma (>= 5.0)
   rack-cors
   rails (~> 8.0.1)
-  rubocop-rails-omakase
+  rubocop-rails-omakase (~> 1.0.0)
   solid_cable
   solid_cache
   solid_queue
