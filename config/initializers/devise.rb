@@ -63,5 +63,7 @@ Devise.setup do |config|
   # Set up navigation formats for APIs, commonly used in API responses
   config.navigational_formats = []
 
+  config.confirm_within = 3.days
+
   # Use other features as needed based on your application
 end

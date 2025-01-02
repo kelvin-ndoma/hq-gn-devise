@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   controllers: {
     sessions: "users/sessions",  # Custom sessions controller
     registrations: "users/registrations",  # Custom registrations controller
-    passwords: "users/passwords"  # Custom passwords controller
+    passwords: "users/passwords",  # Custom passwords controller
+    confirmations: "users/confirmations"  # Custom confirmations controller
   }
 
   # Custom routes for updating user details (for `PUT` and `PATCH`)
@@ -25,6 +26,13 @@ Rails.application.routes.draw do
     put "users", to: "users/registrations#update"  # Update user details
     patch "users", to: "users/registrations#update"  # Same as PUT
     delete "users", to: "users/registrations#destroy"  # Delete user account
+
+    # Custom routes for account confirmation
+    # GET route to validate token (this is a simple token validation check)
+    get 'users/confirmation', to: 'users/confirmations#show'  # GET route for confirmation token validation
+    
+    # POST route to handle confirmation action (this confirms the account)
+    post 'users/confirmation', to: 'users/confirmations#create'  # POST route to actually confirm the account
   end
 
   # If in development environment, mount LetterOpenerWeb for email previews
@@ -32,7 +40,7 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
-  # admin routes
+  # Admin routes
   namespace :admin do
     resources :users, only: [ :index, :create, :destroy, :update ]  # Admin can list, create, and delete users
   end

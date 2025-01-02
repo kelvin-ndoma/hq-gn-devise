@@ -3,8 +3,7 @@ class User < ApplicationRecord
 
   include Devise::JWT::RevocationStrategies::JTIMatcher
 
-  devise :database_authenticatable, :recoverable, :registerable, :validatable, :rememberable,
-         :jwt_authenticatable, jwt_revocation_strategy: self
+  devise :database_authenticatable, :recoverable, :registerable, :validatable, :rememberable, :confirmable, :jwt_authenticatable, jwt_revocation_strategy: self
 
   # Validations
   validates :first_name, presence: true, length: { maximum: 50 }, unless: :password_reset?
