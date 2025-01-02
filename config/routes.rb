@@ -29,10 +29,10 @@ Rails.application.routes.draw do
 
     # Custom routes for account confirmation
     # GET route to validate token (this is a simple token validation check)
-    get 'users/confirmation', to: 'users/confirmations#show'  # GET route for confirmation token validation
-    
+    get "users/confirmation", to: "users/confirmations#show"  # GET route for confirmation token validation
+
     # POST route to handle confirmation action (this confirms the account)
-    post 'users/confirmation', to: 'users/confirmations#create'  # POST route to actually confirm the account
+    post "users/confirmation", to: "users/confirmations#create"  # POST route to actually confirm the account
   end
 
   # If in development environment, mount LetterOpenerWeb for email previews
